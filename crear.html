@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comunidad | Diario de Cultura</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="icon" href="Imagenes/favicon.png" type="ICO" />
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet" />
+  <style>
+    .comunidad-layout {
+      display: grid;
+      grid-template-columns: 0.7fr 2.3fr 1fr;
+      gap: 30px;
+      max-width: 1400px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+    .foro {
+      grid-column: 2 / span 2;
+      min-height: 400px; /* Ajusta según lo que ocupaba el container de la derecha */
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER personalizado para Comunidad -->
+<header class="comunidad-header">
+  <div class="logo">
+    <a href="index.html"><img src="Imagenes/Logo.png" alt="Logo Diario de Cultura" /></a>
+    <button class="comunidad-active-btn" style="display:block;margin:12px auto 0 auto;padding:8px 24px;background:#8D7AFF;color:#fff;border:none;border-radius:20px;font-size:1rem;font-family:'Urbanist',sans-serif;cursor:default;box-shadow:0 2px 8px rgba(0,0,0,0.06);">Comunidad</button>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar en Comunidad..." />
+  </div>
+  <div class="acciones">
+    <button>Crear</button>
+    <span class="notificaciones-icon" style="display:inline-flex;align-items:center;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;">
+        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      </svg>
+    </span>
+    <img src="Imagenes/User.png" alt="Usuario" style="width:32px;height:32px;object-fit:contain;" />
+  </div>
+</header>
+
+<!-- CUERPO principal con 3 columnas -->
+<main class="comunidad-layout">
+  <!-- Izquierda: Secciones -->
+  <aside class="secciones">
+    <strong style="display:block;margin-bottom:10px;">Secciones</strong>
+    <hr style="border:none;border-top:1.5px solid #e0e0e0;margin:0 0 16px 0;">
+    <ul>
+      <li><a href="#">Literatura</a></li>
+      <li><a href="#">Cine</a></li>
+      <li><a href="#">Música</a></li>
+      <li><a href="#">Teatro y Danza</a></li>
+      <li><a href="#">Museos y Artes Plásticas</a></li>
+      <li><a href="#">Cultura Argentina</a></li>
+    </ul>
+  </aside>
+
+  <!-- Centro: Foro (dejado en blanco) -->
+  <section class="foro">
+    <form id="crear-post-form" style="max-width:600px;margin:40px auto 0 auto;padding:32px;background:#f9f9f9;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);display:flex;flex-direction:column;gap:22px;">
+      <label for="seccion" style="font-weight:600;">Sección</label>
+      <select id="seccion" name="seccion" required style="padding:10px;border-radius:8px;border:1px solid #ccc;font-size:1em;">
+        <option value="">Elegí una sección...</option>
+        <option value="Literatura">Literatura</option>
+        <option value="Cine">Cine</option>
+        <option value="Música">Música</option>
+        <option value="Teatro y Danza">Teatro y Danza</option>
+        <option value="Museos y Artes Plásticas">Museos y Artes Plásticas</option>
+        <option value="Cultura Argentina">Cultura Argentina</option>
+      </select>
+
+      <label for="titulo" style="font-weight:600;">Título</label>
+      <input type="text" id="titulo" name="titulo" required maxlength="100" placeholder="Título del posteo" style="padding:10px;border-radius:8px;border:1px solid #ccc;font-size:1em;">
+
+      <label for="contenido" style="font-weight:600;">Contenido</label>
+      <!-- Iconos de herramientas -->
+      <div style="display:flex;gap:18px;margin-bottom:8px;align-items:center;">
+        <!-- Adjuntar archivo -->
+        <button type="button" title="Adjuntar archivo" style="background:none;border:none;cursor:pointer;">
+          <svg width="22" height="22" fill="none" stroke="#7576F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.3V7a5 5 0 0 0-10 0v10a3 3 0 0 0 6 0V8"/>
+          </svg>
+        </button>
+        <!-- Adjuntar link -->
+        <button type="button" title="Adjuntar link" style="background:none;border:none;cursor:pointer;">
+          <svg width="22" height="22" fill="none" stroke="#7576F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10 13a5 5 0 0 1 7 0l1 1a5 5 0 0 1-7 7l-1-1"/>
+            <path d="M14 11a5 5 0 0 0-7 0l-1 1a5 5 0 0 0 7 7l1-1"/>
+          </svg>
+        </button>
+        <!-- Emoji -->
+        <button type="button" title="Insertar emoji" style="background:none;border:none;cursor:pointer;">
+          <svg width="22" height="22" fill="none" stroke="#7576F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="9"/>
+            <path d="M8 14s1.5 2 3 2 3-2 3-2"/>
+            <path d="M9 9h.01"/>
+            <path d="M13 9h.01"/>
+          </svg>
+        </button>
+        <!-- Cambiar tipografía -->
+        <button type="button" title="Cambiar tipografía" style="background:none;border:none;cursor:pointer;">
+          <svg width="22" height="22" fill="none" stroke="#7576F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 20V10a4 4 0 0 1 4-4h8"/>
+            <path d="M4 4h16"/>
+          </svg>
+        </button>
+        <!-- Justificación izquierda -->
+        <button type="button" title="Justificar a la izquierda" style="background:none;border:none;cursor:pointer;">
+          <svg width="22" height="22" fill="none" stroke="#7576F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="7" x2="21" y2="7"/>
+            <line x1="3" y1="12" x2="15" y2="12"/>
+            <line x1="3" y1="17" x2="21" y2="17"/>
+          </svg>
+        </button>
+        <!-- Justificación centrada -->
+        <button type="button" title="Justificar centrado" style="background:none;border:none;cursor:pointer;">
+          <svg width="22" height="22" fill="none" stroke="#7576F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="6" y1="7" x2="18" y2="7"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="6" y1="17" x2="18" y2="17"/>
+          </svg>
+        </button>
+        <!-- Justificación derecha -->
+        <button type="button" title="Justificar a la derecha" style="background:none;border:none;cursor:pointer;">
+          <svg width="22" height="22" fill="none" stroke="#7576F2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="7" x2="21" y2="7"/>
+            <line x1="9" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="17" x2="21" y2="17"/>
+          </svg>
+        </button>
+      </div>
+      <textarea id="contenido" name="contenido" required rows="7" maxlength="1000" placeholder="Escribí tu posteo aquí..." style="padding:10px;border-radius:8px;border:1px solid #ccc;font-size:1em;resize:vertical;"></textarea>
+
+      <div style="display:flex;gap:16px;justify-content:flex-end;">
+        <button type="button" id="guardar-borrador" style="background:#E2E3F9;color:#180C41;border:none;padding:10px 24px;border-radius:20px;font-family:'Urbanist',sans-serif;font-weight:600;cursor:pointer;">Guardar como borrador</button>
+        <button type="submit" style="background:#8D7AFF;color:#fff;border:none;padding:10px 24px;border-radius:20px;font-family:'Urbanist',sans-serif;font-weight:600;cursor:pointer;">Postear</button>
+      </div>
+    </form>
+
+    <div id="mensaje-posteo" style="display:none;max-width:600px;margin:40px auto 0 auto;padding:32px;background:#f9f9f9;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);text-align:center;">
+      <h2 style="color:#8D7AFF;">¡Gracias por tu posteo!</h2>
+      <p>Tu publicación ha sido enviada correctamente.</p>
+      <div style="display:flex;gap:16px;justify-content:center;margin-top:24px;">
+        <button id="volver-postear" style="background:#E2E3F9;color:#180C41;border:none;padding:10px 24px;border-radius:20px;font-family:'Urbanist',sans-serif;font-weight:600;cursor:pointer;">Volver a postear</button>
+        <button id="volver-comunidad" style="background:#8D7AFF;color:#fff;border:none;padding:10px 24px;border-radius:20px;font-family:'Urbanist',sans-serif;font-weight:600;cursor:pointer;">Volver a Comunidad</button>
+      </div>
+    </div>
+
+    <script>
+      const form = document.getElementById('crear-post-form');
+      const mensaje = document.getElementById('mensaje-posteo');
+      const volverPostear = document.getElementById('volver-postear');
+      const volverComunidad = document.getElementById('volver-comunidad');
+      const guardarBorrador = document.getElementById('guardar-borrador');
+
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        form.style.display = 'none';
+        mensaje.style.display = 'block';
+      });
+
+      volverPostear.addEventListener('click', function() {
+        form.reset();
+        mensaje.style.display = 'none';
+        form.style.display = 'flex';
+      });
+
+      volverComunidad.addEventListener('click', function() {
+        window.location.href = 'comunidad.html';
+      });
+
+      guardarBorrador.addEventListener('click', function() {
+        alert('Borrador guardado (simulado).');
+      });
+    </script>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+  <div class="footer-grid">
+      <div class="footer-column sections">
+          <h4>SECCIONES</h4>
+          <ul>
+              <li><a href="#">Literatura</a></li>
+              <li><a href="#">Música</a></li>
+              <li><a href="#">Cine y Artes Visuales</a></li>
+              <li><a href="#">Teatro y Danza</a></li>
+              <li><a href="#">Museos y Artes Plásticas</a></li>
+              <li><a href="#">Costumbres y Tendencias</a></li>
+              <li><a href="#">Turismo Cultural</a></li>
+              <li><a href="#">Estadísticas culturales</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column contact-info">
+          <h4>HABLEMOS</h4>
+          <ul>
+              <li><a href="#">Contacto administrativo</a></li>
+              <li><a href="#">Contacto de lectores</a></li>
+              <li><a href="#">Contacto comercial</a></li>
+          </ul>
+          <div class="footer-social-icons">
+              <a href="#" class="social-icon-link"><img src="Imagenes/IG.png" alt="Instagram"></a>
+              <a href="#" class="social-icon-link"><img src="Imagenes/FB.png" alt="Facebook"></a>
+              <a href="#" class="social-icon-link"><img src="Imagenes/YT.png" alt="YouTube"></a>
+          </div>
+      </div>
+
+      <div class="footer-column editorial-info">
+          <h4>DIARIO DE CULTURA</h4>
+          <address>
+              <p>Tucumán 3808 – P.B.</p>
+              <p>Ciudad de Buenos Aires</p>
+          </address>
+          <p class="copyright">Copyright 2009-2024</p>
+      </div>
+  </div>
+</footer>
+
+</body>
+</html>

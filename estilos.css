@@ -1,0 +1,862 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Fuente base, puedes cambiarla a la de Figma */
+    line-height: 1.6;
+    color: #333; /* Color de texto base */
+    background-color: #f8f8f8; /* Un fondo ligeramente gris para el cuerpo */
+}
+
+a {
+    text-decoration: none; /* Quita el subrayado de los enlaces */
+    color: inherit; /* Hereda el color del texto del padre por defecto */
+}
+
+ul {
+    list-style: none; /* Quita los puntos de las listas desordenadas */
+}
+
+img {
+    max-width: 100%; /* Asegura que las imágenes no desborden su contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
+    display: block; /* Elimina espacio extra debajo de las imágenes */
+}
+
+/* Contenedor principal para centrar el contenido si es necesario */
+.container {
+    max-width: 1200px; /* Ancho máximo de tu diseño, ajusta si es necesario */
+    margin: 0 auto; /* Centra el contenedor en la página */
+    padding: 0 20px; /* Un poco de padding a los lados */
+}
+
+------------------------------------------------------------------------------
+
+/* Estilos para la Cabecera Superior */
+.main-header {
+   /* ¡NUEVO COLOR DE FONDO! Púrpura claro/lavanda de Group 16.png */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Sombra sutil debajo de la cabecera */
+    /* El padding se gestiona mejor en top-header-bar para alinearse con el max-width */
+}
+
+
+.top-header-bar {
+    display: flex; /* Habilita Flexbox */
+    justify-content: space-between; /* Distribuye los elementos: izquierda (iconos), centro (logo), derecha (botón) */
+    align-items: center; /* Centra los elementos verticalmente */
+    padding: 15px 150px; /* Espaciado interno: 10px arriba/abajo, 20px izquierda/derecha */
+    margin: 0 ; /* Centra esta barra dentro de la página */
+    border-bottom: none; /* Quitamos esta línea divisoria, no se ve en Group 16.png */
+        background-color: #A5A6F3;
+}
+
+.social-icons {
+    display: flex; /* Usa Flexbox para los iconos de redes sociales */
+    gap: 15px; /* Espacio entre los iconos */
+}
+
+.social-icons .icon-link img {
+    width: 32px; /* AUMENTADO: Tamaño más grande para los iconos, como en Group 16.png */
+    height: 32px;
+    /* Si tus iconos PNG ya son blancos, NO necesitas el filtro.
+       Si tus iconos PNG son negros o de otro color y quieres que sean blancos, usa esto: */
+    /* filter: brightness(0) invert(1); */
+}
+
+.site-logo {
+    /* Como el logo es un PNG completo (imagen + texto "Diario de Cultura"), no necesitamos flexbox ni h1 aquí. */
+    /* Si tu HTML aún tiene un h1 dentro de site-logo, asegúrate de eliminarlo o ocultarlo con display: none; */
+    /* Este contenedor 'site-logo' simplemente puede servir para contener el img del logo. */
+    display: flex; /* Lo mantenemos flex para elinear el img si hay más elementos */
+    align-items: center;
+    justify-content: center; /* Centra la imagen si el contenedor es más grande */
+}
+
+.site-logo img {
+    height: 80px; /* ¡NUEVO TAMAÑO! Ajustado para que el logo sea más grande como en Group 16.png */
+    width: auto; /* Mantiene la proporción de la imagen */
+    /* No se necesita filtro aquí si tu PNG ya tiene el color rojo deseado. */
+}
+
+/* Si tu HTML todavía tiene un h1 dentro de .site-logo y el logo es un PNG, ocúltalo: */
+.site-logo h1 {
+    display: none; /* Oculta el h1 si el logo es una imagen completa */
+}
+
+.CTA{
+ display: flex; /* Usa Flexbox para los iconos de redes sociales */
+}
+.CTA img{
+     width: 28px; /* AUMENTADO: Tamaño más grande para los iconos, como en Group 16.png */
+    height: 36px;
+    padding-left: 10px;
+    margin-top: 5px;
+}
+
+.community-button {
+    background-color: #180C41; /* ¡NUEVO COLOR DE FONDO! Púrpura más oscuro del botón en Group 16.png */
+    color: #7576F2;
+    padding: 0px 30px; /* Ajusta el padding para un botón más grande y ovalado */
+    border-radius: 20px; /* ¡MÁS REDONDEADO! Para lograr la forma ovalada */
+    font-weight: 600;
+    text-transform: none; /* El texto "Comunidad" no parece uppercase en el mockup */
+    font-size: 26px; /* Ajusta el tamaño de fuente si es necesario */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el botón como en el mockup */
+    border: 3px solid #7576F2;
+    /* ¡CLAVE! Aplica Raleway Italic, peso 600 */
+    font-family: 'Raleway', sans-serif; /* Cambia a Raleway */
+    font-weight: 600;                    /* Peso 600 */
+    font-style: italic;                  /* ¡Estilo Italic! */
+}
+
+.community-button:hover {
+    background-color: #5d4cd1; /* Color más oscuro al pasar el mouse */
+    box-shadow: 0 6px 12px rgba(0,0,0,0.3); /* Sombra más pronunciada al pasar el mouse */
+}
+
+
+
+
+
+
+/* Estilos para la Barra de Navegación Principal */
+.main-nav {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Opcional: sombra para toda la barra */
+}
+
+.main-nav ul {
+    padding: 0; /* Quita el padding lateral para que ocupe todo el ancho */
+    margin: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    position: relative;
+    height: 60px;
+}
+
+.main-nav ul li a {
+    padding: 8px 1px; /* Menos espacio horizontal entre botones */
+    font-weight: 400;
+    color: #8D7AFF;
+    transition: color 0.3s ease;
+    position: relative;
+    font-size: 1.1em;
+    white-space: nowrap;
+    font-family: 'Urbanist', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.main-nav ul li a:hover {
+    color: #5d4cd1;
+}
+
+/* Efecto de subrayado al pasar el mouse */
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #8D7AFF;
+    bottom: -5px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after {
+    width: 100%;
+}
+
+.Fecha {
+    font-weight: 600;
+    /* Sacamos la fecha del flujo normal para posicionarla libremente */
+    position: absolute;
+    top: 30%; /* Centra verticalmente */
+    left: 50px; /* ¡AJUSTA ESTE VALOR! Mueve la fecha a la izquierda */
+    transform: translateY(-50%); /* Ajuste para centrado perfecto */
+    white-space: nowrap; /* Evita que la fecha se rompa en varias líneas */
+    color: #333; /* Color deseado para la fecha */
+    font-size: 1.1em; /* Ajusta el tamaño si es necesario */
+
+      font-family: 'Urbanist', sans-serif; /* Urbanist ya aplicado */
+    font-weight: 500;                    /* Peso 500 ya aplicado */
+    font-style: normal;                  /* Estilo normal ya aplicado */
+    /* Elimina cualquier margin-right que tenías aquí */
+    /* margin-right: 80%; */
+}
+
+.Home-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* No necesitamos margen aquí, ya que justify-content: space-between lo gestiona */
+}
+
+/* Estilos para la imagen PNG del icono de búsqueda */
+.Home-icon-img{
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    /* filter: invert(30%) sepia(80%) saturate(1500%) hue-rotate(240deg) brightness(80%) contrast(120%); */
+}
+
+.search-bar-container {
+    display: flex; /* Mantenemos flex para que input y lupa estén en fila */
+    align-items: center; /* Centra verticalmente */
+    background-color: #E2E3F9;
+    border-radius: 25px;
+    padding: 8px 15px; /* Ajustamos el padding del contenedor. */
+                          /* 8px arriba/abajo, 15px izquierda/derecha. */
+                          /* Esto le dará espacio a la lupa desde el borde derecho */
+    width: 200px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    /* Quitamos 'position: relative;' y 'overflow: hidden;' de aquí.
+       Con flexbox y el padding, no son necesarios y simplificamos. */
+       justify-content: space-between; /* ¡NUEVO! Distribuye el espacio */
+}
+.search-input {
+    flex-grow: 1;
+    border: none;
+    background-color: transparent;
+    padding: 5px 0;
+    font-size: 1em;
+    color: #333;
+    outline: none;
+    padding-right: 25px; /* ¡NUEVO! Añadimos un padding a la derecha del texto */
+                           /* Esto empujará el texto hacia la izquierda, haciendo espacio para la lupa */
+                           
+      font-family: 'Urbanist', sans-serif; /* Urbanist ya aplicado */
+    font-weight: 400;                    /* Peso 500 ya aplicado */
+    font-style: normal;        
+}
+.search-input::placeholder {
+    color: #8D7AFF; /* Color del texto "Buscar..." del Figma (parece un púrpura) */
+}
+.search-icon-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+    /* El filtro de color si lo necesitas, ya lo tienes */
+    filter: invert(18%) sepia(87%) saturate(2256%) hue-rotate(240deg) brightness(50%) contrast(100%);
+    /* Eliminamos 'position: absolute;', 'top', 'right', 'transform', 'pointer-events'.
+       Con 'display: flex' en el padre y 'margin-left' o 'gap', la posicionamos mejor. */
+    margin-left: 20px; /* ¡NUEVO! Esto mueve la lupa hacia la izquierda, superponiéndola al padding del input */
+                        /* El valor negativo debe ser aprox el ancho de la lupa */
+}
+.search-icon-svg {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+.search-icon-svg svg {
+    width: 28px;
+    height: 28px;
+    display: block;
+}
+/* --- Estilos Generales para el Contenedor Principal (GRID) --- */
+.main-content-grid {
+    display: grid;
+    /* ¡CAMBIO CRÍTICO AQUÍ! Ahora definimos 7 columnas: 6 flexibles para contenido, 1 fija para sidebar */
+    /* Cada 'fr' representa una unidad de fracción. 1.5fr significa "columna y media". */
+    grid-template-columns: 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 1.5fr 300px; /* 6 columnas de 1.5fr para contenido principal, y 1 para sidebar */
+    
+    /* Las filas se ajustarán automáticamente al contenido, excepto donde se especifique un 'grid-row' explícito */
+    grid-auto-rows: minmax(auto, auto); 
+    
+    gap: 30px; /* Espacio entre las celdas de la grilla (horizontal y vertical) */
+    max-width: 1600px; /* Ancho máximo de tu layout, ajusta si tu diseño es diferente */
+    margin: 30px auto; /* Centra la grilla horizontalmente y da margen superior/inferior */
+    padding: 0 20px; /* Padding a los lados para que el contenido no pegue a los bordes de la ventana */
+}
+.CINE{
+    font-size: 20px;
+     font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main-content-grid h2,
+.main-content-grid h3,
+.main-content-grid h4,
+.main-content-grid h5,
+.main-content-grid h6,
+.main-content-grid p {
+    font-family: 'Playfair Display', serif; /* Aplica la fuente Playfair Display */
+    font-weight: 400;                       /* Define el peso en 400 */
+    font-style: normal;                     /* Define el estilo en normal */
+}
+
+.category { 
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    /* Aquí podrías añadir otros estilos para tu span.category como color, padding, border-radius, etc. */
+}
+
+/* --- Estilos Base para TODOS los Ítems Directos de la Grilla (grid-item) --- */
+.grid-item {
+    background-color: #fff; /* Fondo blanco para todos los bloques de contenido */
+    padding: 20px; /* Padding interno dentro de cada bloque */
+    border-radius: 8px; /* Bordes ligeramente redondeados */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sombra sutil para cada bloque */
+}
+
+/* --- POSICIONAMIENTO ESPECÍFICO DE CADA BLOQUE EN LA GRILLA PRINCIPAL --- */
+
+/* BLOQUE 1: Noticia MÚSICA - Premios Gardel (Arriba izquierda) */
+.news-item-gardel {
+    grid-column: 1 / span 3; /* ¡CAMBIO! Ocupa 3 de las nuevas columnas para simular "columna y media" (1.5fr * 2) de un layout anterior de 2 columnas*/
+    grid-row: 1;    /* Fila 1 */
+}
+
+/* BLOQUE 2: Noticia CINE - La Eternauta (Arriba centro) */
+.news-item-eternauta {
+    grid-column: 4 / span 3; /* ¡CAMBIO! Ocupa las siguientes 3 columnas */
+    grid-row: 1;    /* Fila 1 */
+}
+
+/* BLOQUE 3: SIDEBAR (Columna 7, extendida a lo largo de varias filas) */
+.sidebar {
+    grid-column: 7; /* ¡CAMBIO CRÍTICO AQUÍ! Ahora la sidebar está en la SÉPTIMA columna */
+    grid-row: 1 / span 6; /* Ajusta la extensión de la sidebar para que termine en la misma fila que la última noticia (fila 6) */
+    background-color: #DDDBF8; /* El color de fondo claro de la sidebar en tu Figma */
+}
+
+/* BLOQUE 4: Noticia LITERATURA - María Elena Walsh (Debajo de Premios Gardel) */
+.news-item-walsh {
+    grid-column: 1 / span 3; /* ¡CAMBIO! Ocupa 3 de las nuevas columnas */
+    grid-row: 2;    /* Fila 2 */
+}
+
+/* BLOQUE 5: Noticia CINE - Día del Cine Argentino (Debajo de La Eternauta) */
+.news-item-cine-argentino {
+    grid-column: 4 / span 3; /* ¡CAMBIO! Ocupa las siguientes 3 columnas */
+    grid-row: 2;    /* Fila 2 */
+}
+
+/* SECCIÓN DIVISORIA: "Según tus gustos" Fito Páez libro de poesía */
+.section-fito-poesia-divider {
+    grid-column: 1 / span 6; /* ¡CAMBIO CRÍTICO AQUÍ! Ahora Fito ocupa las SEIS primeras columnas (las 3 del contenido principal anterior) */
+    grid-row: 3;             /* En la fila 3 */
+    display: grid;
+    grid-template-columns: 1.2fr 1.8fr; /* Divide este bloque en dos columnas internas para texto e imagen */
+    gap: 30px; /* Espacio entre el texto y la imagen de Fito */
+    align-items: center; /* Centra verticalmente el contenido dentro de este bloque */
+    padding: 30px; /* Más padding para que sea más prominente */
+    background-color: #fff; /* Asegura el fondo blanco */
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08); /* Sombra más pronunciada */
+}
+
+.section-fito-poesia-divider .fito-poesia-content h2 {
+    font-size: 1.4em;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+.section-fito-poesia-divider .fito-poesia-content h3 {
+    font-size: 1.8em; /* Título grande como en el Figma */
+    color: #8c005b; /* Color de acento */
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+.section-fito-poesia-divider .fito-poesia-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 0;
+}
+.section-fito-poesia-divider .fito-poesia-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-top: 0; /* Anula el margin-top general */
+}
+
+
+/* BLOQUE 6: Noticia Música - Paul McCartney (Columna 1, fila 4) */
+/* Este es el que tiene la imagen a la izquierda del texto */
+.news-item-paul-mccartney-small {
+    grid-column: 1 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas (equivalente a 1 de las anteriores) */
+    grid-row: 4;    /* Fila 4 */
+    display: flex; /* Contenedor flex para alinear imagen y texto */
+    align-items: flex-start; /* Alinea los ítems al inicio (arriba) */
+    gap: 15px; /* Espacio entre imagen y texto */
+    padding: 15px; /* Ajuste de padding, puede ser un poco menos que los bloques grandes */
+}
+.news-item-paul-mccartney-small img {
+    width: 100%; /* Ancho fijo para la imagen pequeña */
+    height: auto; /* Altura fija para la imagen pequeña */
+    object-fit: cover;
+    border-radius: 4px;
+    margin-top: 0; /* Anula el margin-top general de img */
+    flex-shrink: 0; /* Evita que la imagen se achique */
+}
+.news-item-paul-mccartney-small h3 {
+    margin: 0; /* Elimina margen superior del título */
+    font-size: 1.1em; /* Ajuste de tamaño para estos títulos */
+    line-height: 1.3;
+}
+.news-item-paul-mccartney-small .category {
+    margin-bottom: 5px; /* Pequeño margen debajo de la categoría */
+}
+/* Asegurarse de que el texto no se encoja */
+.news-item-paul-mccartney-small div {
+    flex-grow: 1; /* Permite que el div de texto crezca */
+}
+
+
+/* BLOQUE 7: Noticia Música - Bandas sonoras de videojuegos (Columna 3, fila 4) */
+/* Este y los siguientes son los bloques con imagen arriba y texto abajo, con una grilla 3xN */
+.news-item-bandas-sonoras {
+    grid-column: 3 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas */
+    grid-row: 4;    /* Fila 4 */
+    padding: 15px; /* Menos padding para este tipo de bloque */
+}
+.news-item-bandas-sonoras img {
+    height: 150px; /* Altura fija para la imagen */
+    margin-bottom: 10px; /* Espacio entre imagen y texto */
+}
+
+/* BLOQUE 8: Noticia Cultura Argentina - Fernando Rosas (Columna 5, fila 4) */
+.news-item-fernando-rosas {
+    grid-column: 5 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas */
+    grid-row: 4; /* Fila 4 */
+    padding: 15px;
+}
+.news-item-fernando-rosas img {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* BLOQUE 9: Noticia Literatura - Joana Marcús (Columna 1, fila 5) */
+.news-item-joana-marcus {
+    grid-column: 1 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas */
+    grid-row: 5; /* Fila 5 */
+    padding: 15px;
+}
+.news-item-joana-marcus img {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* BLOQUE 10: Noticia Literatura - Bob Dylan (Columna 3, fila 5) */
+.news-item-bob-dylan {
+    grid-column: 3 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas */
+    grid-row: 5; /* Fila 5 */
+    padding: 15px;
+}
+.news-item-bob-dylan img {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* BLOQUE 11: Noticia Teatro y Danza - Mauricio Kartun (Columna 5, fila 5) */
+.news-item-mauricio-kartun {
+    grid-column: 5 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas */
+    grid-row: 5; /* Fila 5 */
+    padding: 15px;
+}
+.news-item-mauricio-kartun img {
+    width: 100%;
+    height: auto;
+}
+
+/* BLOQUE 12: Noticia Cultura Argentina - Mar del Plata (Columna 1, fila 6) */
+.news-item-mar-del-plata {
+    grid-column: 1 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas */
+    grid-row: 6; /* Fila 6 */
+    padding: 15px;
+}
+.news-item-mar-del-plata img {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* BLOQUE 13: Noticia Museos y Artes Plásticas - El Museo Afro (Columna 3, fila 6) */
+.news-item-museo-afro {
+    grid-column: 3 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas */
+    grid-row: 6; /* Fila 6 */
+    padding: 15px;
+}
+.news-item-museo-afro img {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* BLOQUE 14: Noticia Cine - La red social (Columna 5, fila 6) */
+.news-item-red-social-secuela {
+    grid-column: 5 / span 2; /* ¡CAMBIO! Ocupa 2 de las nuevas columnas */
+    grid-row: 6; /* Fila 6 */
+    padding: 15px;
+}
+.news-item-red-social-secuela img {
+    height: 150px;
+    margin-bottom: 10px;
+}
+
+/* Reafirmación de estilos generales para títulos de noticias pequeñas (imagen arriba) */
+.news-item-bandas-sonoras h3,
+.news-item-fernando-rosas h3,
+.news-item-joana-marcus h3,
+.news-item-bob-dylan h3,
+.news-item-mauricio-kartun h3,
+.news-item-mar-del-plata h3,
+.news-item-museo-afro h3,
+.news-item-red-social-secuela h3 {
+    font-size: 1.1em; /* Ajustado para que el texto sea un poco más grande y legible en bloques pequeños */
+    line-height: 1.3;
+    margin-top: 0; /* Asegura que el título comience justo después de la imagen/categoría */
+    margin-bottom: 5px; /* Un poco de espacio debajo del título */
+}
+
+.news-item-bandas-sonoras .category,
+.news-item-fernando-rosas .category,
+.news-item-joana-marcus .category,
+.news-item-bob-dylan .category,
+.news-item-mauricio-kartun .category,
+.news-item-mar-del-plata .category,
+.news-item-museo-afro .category,
+.news-item-red-social-secuela .category {
+    margin-bottom: 5px; /* Espacio para la categoría */
+    font-size: 0.75em; /* Ligeramente más pequeña si es necesario */
+}
+
+/* --- Estilos Detallados para el Contenido Interno de cada Bloque (Reafirmaciones y ajustes) --- */
+
+/* Estilos para la categoría (ej. MÚSICA, CINE) */
+.category {
+    font-size: 0.8em;
+    color: #888;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Estilos generales para los títulos de las noticias */
+.grid-item h2 { /* Títulos de noticias principales/grandes */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.2;
+}
+.grid-item h3 { /* Títulos de noticias más pequeñas o sub-títulos */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #333;
+    line-height: 1.3;
+}
+.grid-item h4 { /* Títulos de noticias muy pequeñas */
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    color: #333;
+    line-height: 1.2;
+}
+
+/* Estilos generales para imágenes dentro de los bloques de noticias */
+.grid-item > img:not(.news-item-sub-images img, .latest-news-list img, .recital-list img) {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 10px;
+    border-radius: 4px;
+    object-fit: cover;
+}
+
+/* Contenedor para las sub-imágenes (noticias con 4 imágenes pequeñas) */
+.news-item-sub-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas para las sub-imágenes */
+    gap: 10px;
+    margin-top: 15px;
+}
+.news-item-sub-images img {
+    width: 100%;
+    height: 100px; /* Altura fija para consistencia visual, ajusta si es necesario */
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* Estilos de la Sidebar y Últimas Noticias */
+.sidebar h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.latest-news-list li {
+    display: flex;
+     flex-direction: column; /* Cambia la dirección a columna (imagen arriba, texto abajo) */
+    align-items: flex-start; /* Alinea los elementos al inicio (arriba) */
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.latest-news-list li:last-child {
+    margin-bottom: 0;
+}
+.latest-news-list li img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0; /* Evita que la imagen se comprima */
+}
+.latest-news-list li p {
+    font-size: 0.9em;
+    color: #555;
+    line-height: 1.3;
+    margin: 0;
+    text-align: left;
+}
+
+/* Estilos para la Agenda de Recitales (dentro de la sidebar) */
+.recital-agenda {
+    margin-top: 30px; /* Separa de Últimas Noticias */
+    padding-top: 20px; /* Un poco de padding interno */
+    border-top: 1px solid #eee; /* Línea divisoria */
+}
+.recital-agenda h3 {
+    /* Mantiene estilos similares a h3 de sidebar o ajusta */
+}
+.recital-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+.recital-list li img {
+    width: 120px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+.recital-list li h4 {
+    font-size: 1em;
+    margin-bottom: 5px;
+    color: #333;
+}
+.recital-list li p {
+    font-size: 0.85em;
+    color: #666;
+    margin: 0;
+}
+/* --- Estilos para el Footer --- */
+.main-footer {
+    background-color: #A5A6F3; /* Color de fondo rojo oscuro del mockup */
+    color: #fff; /* Color de texto blanco general */
+    padding: 40px 20px; /* Padding interno para dar espacio alrededor del contenido */
+    margin-top: 50px; /* Espacio superior para separarlo del contenido principal */
+}
+
+.footer-grid {
+    display: grid; /* Habilita CSS Grid para las columnas del footer */
+    /* Define las 3 columnas. Aquí, las hago equitativas con 1fr cada una. */
+    /* Podrías ajustar los anchos (ej: grid-template-columns: 1.5fr 1fr 1fr;) si una columna es más ancha */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px; /* Espacio entre las columnas */
+    max-width: 1200px; /* Mismo ancho máximo que el resto de tu contenido */
+    margin: 0 auto; /* Centra el contenido del footer */
+}
+
+.footer-column h4 {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin-bottom: 20px; /* Espacio debajo de los títulos de columna */
+    color: #fff; /* Asegura que los títulos sean blancos */
+    white-space: nowrap; /* Evita que el título se rompa */
+}
+
+.footer-column ul {
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 10px; /* Espacio entre los ítems de la lista */
+}
+
+.footer-column ul li:last-child {
+    margin-bottom: 0; /* No hay margen inferior para el último ítem de la lista */
+}
+
+.footer-column ul li a,
+.footer-column p,
+.footer-column address {
+    color: #ffffff; /* Color gris claro para el texto de los enlaces y párrafos */
+    font-size: 0.95em;
+    line-height: 1.4;
+}
+
+.footer-column ul li a:hover {
+    color: #870404; /* Color blanco al pasar el mouse sobre los enlaces */
+}
+
+/* Estilos específicos para la columna HABLEMOS - iconos sociales */
+.footer-social-icons {
+    display: flex; /* Usa Flexbox para los iconos sociales */
+    gap: 15px; /* Espacio entre los iconos */
+    margin-top: 20px; /* Espacio encima de los iconos sociales */
+}
+
+.footer-social-icons .social-icon-link img {
+    width: 24px; /* Tamaño de los iconos, ajusta si es necesario */
+    height: 24px;
+    /* Si tus iconos son negros y quieres que sean blancos, puedes usar filter: invert(1); */
+    /* filter: invert(1); */
+}
+
+/* Estilos para la columna DIARIO DE CULTURA - dirección y copyright */
+.footer-column address {
+    font-style: normal; /* Quita la cursiva por defecto de <address> */
+    margin-bottom: 10px; /* Espacio entre la dirección y el copyright */
+}
+
+.footer-column .copyright {
+    margin-top: 65px;
+    font-size: 0.85em; /* Tamaño de fuente más pequeño para el copyright */
+    color: #ffffff;
+}
+
+/*Comunidad VVV*/
+.comunidad-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 150px;
+  background-color: #A5A6F3;
+}
+
+.comunidad-header .logo img {
+  height: 60px;
+  width: auto;
+}
+
+.comunidad-header .search-bar {
+  flex-grow: 1;
+  max-width: 500px;
+  margin: 0 30px;
+}
+
+.comunidad-header .search-bar input {
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  background-color: #E2E3F9;
+  font-family: 'Urbanist', sans-serif;
+  font-size: 1em;
+}
+
+.comunidad-header .acciones {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.comunidad-header .acciones button {
+  background-color: #180C41;
+  color: #7576F2;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 2px solid #7576F2;
+  font-family: 'Raleway', sans-serif;
+  font-style: italic;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.comunidad-layout {
+  display: grid;
+  /* Usa variables CSS para los anchos de columnas */
+  grid-template-columns: var(--comunidad-secciones-width, 1fr) 2fr 1fr;
+  gap: 30px;
+  max-width: 1400px;
+  margin: 30px auto;
+  padding: 0 20px;
+  --comunidad-secciones-width: 0.6fr;
+}
+
+.comunidad-layout aside,
+.comunidad-layout section {
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.comunidad-layout .secciones ul {
+  padding: 0;
+  margin: 0;
+}
+
+.comunidad-layout .secciones li {
+  margin-bottom: 10px;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #6e5bad;
+}
+
+.foro .post {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 20px;
+}
+
+.foro .post h2 {
+  font-size: 1.3em;
+  margin-bottom: 8px;
+  font-family: 'Playfair Display', serif;
+  color: #333;
+}
+
+.foro .post .meta {
+  font-size: 0.9em;
+  color: #666;
+  font-family: 'Inter', sans-serif;
+  margin-bottom: 10px;
+}
+
+.foro .post .acciones {
+  font-size: 0.9em;
+  color: #7576F2;
+  display: flex;
+  gap: 15px;
+}
+
+.ultimas-noticias h3 {
+  font-size: 1.2em;
+  margin-bottom: 15px;
+  font-family: 'Urbanist', sans-serif;
+  color: #333;
+}
+
+.ultimas-noticias ul {
+  padding: 0;
+  margin: 0;
+}
+
+.ultimas-noticias li {
+  margin-bottom: 15px;
+  font-size: 0.95em;
+  font-family: 'Playfair Display', serif;
+  color: #444;
+}
+

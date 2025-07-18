@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Comunidad | Diario de Cultura</title>
+  <link rel="stylesheet" href="estilos.css" />
+  <link rel="icon" href="Imagenes/favicon.png" type="ICO" />
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- HEADER personalizado para Comunidad -->
+<header class="comunidad-header">
+  <div class="logo">
+    <a href="index.html"><img src="Imagenes/Logo.png" alt="Logo Diario de Cultura" /></a>
+    <a href="comunidad.html">
+      <button class="comunidad-active-btn" style="display:block;margin:12px auto 0 auto;padding:8px 24px;background:#8D7AFF;color:#fff;border:none;border-radius:20px;font-size:1rem;font-family:'Urbanist',sans-serif;cursor:pointer;box-shadow:0 2px 8px rgba(0,0,0,0.06);">Comunidad</button>
+    </a>
+  </div>
+  <div class="search-bar">
+    <input type="text" placeholder="Buscar en Comunidad..." />
+  </div>
+  <div class="acciones">
+    <a href="crear.html">
+      <button>Crear</button>
+    </a>
+    <span class="notificaciones-icon" style="display:inline-flex;align-items:center;">
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:block;">
+        <path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"/>
+        <path d="M13.73 21a2 2 0 0 1-3.46 0"/>
+      </svg>
+    </span>
+    <a href="login.html">
+      <img src="Imagenes/User.png" alt="Usuario" style="width:32px;height:32px;object-fit:contain;cursor:pointer;" />
+    </a>
+  </div>
+</header>
+
+<!-- CUERPO principal con 3 columnas -->
+<main class="comunidad-layout">
+  <!-- Izquierda: Secciones -->
+  <aside class="secciones">
+    <strong style="display:block;margin-bottom:10px;">Secciones</strong>
+    <hr style="border:none;border-top:1.5px solid #e0e0e0;margin:0 0 16px 0;">
+    <ul>
+      <li><a href="#">Literatura</a></li>
+      <li><a href="#">Cine</a></li>
+      <li><a href="#">Música</a></li>
+      <li><a href="#">Teatro y Danza</a></li>
+      <li><a href="#">Museos y Artes Plásticas</a></li>
+      <li><a href="#">Cultura Argentina</a></li>
+    </ul>
+  </aside>
+
+  <!-- Centro: Foro -->
+  <section class="foro">
+
+    <article class="post">
+      <div class="meta"><strong>/Literatura</strong> • Hace 1 h • @AnaLectora</div>
+      <h2>Literalmente mi momento del año. Ya estoy tachando los días como si fuera un recital. Nos vemos entre stands, descuentos y olor a libro nuevo 📚❤️
+🧵 #FeriaDelLibro2025</h2>
+      <div class="acciones">
+        <button class="like-btn" data-liked="false" style="background:none;border:none;cursor:pointer;padding:0;vertical-align:middle;">
+          <svg class="heart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-5.434-7-10.5A5.5 5.5 0 0 1 12 5.5a5.5 5.5 0 0 1 7 5.0C19 15.566 12 21 12 21z"/>
+          </svg>
+        </button>
+        <span>1,1 mil</span>
+        <button class="comment-btn" id="show-comments-btn" style="background:none;border:none;cursor:pointer;padding:0 0 0 8px;vertical-align:middle;">
+          <svg class="comment-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#457B9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </button>
+        <span>54</span> • <span>🔗 Compartir</span>
+      </div>
+      <div id="comments-dropdown" style="display:none;margin:16px 0 0 0;padding:16px;background:#F7F6FB;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+        <strong style="font-size:1.05em;margin-bottom:8px;display:block;">Comentarios</strong>
+        <form id="form-literatura" style="margin-bottom:16px;">
+          <input type="text" id="input-literatura" placeholder="Escribe tu comentario..." style="width:80%;padding:6px 10px;border-radius:6px;border:1px solid #ccc;font-size:1em;">
+          <button type="submit" style="padding:6px 16px;border:none;border-radius:6px;background:#8D7AFF;color:#fff;font-size:1em;cursor:pointer;">Enviar</button>
+        </form>
+        <div id="comments-list-literatura">
+          <div style="margin-bottom:12px;">
+            <span style="font-weight:bold;color:#8D7AFF;">@LibroManía</span> <span style="color:#888;">• Hace 10 min</span>
+            <div>¡Totalmente! La Feria es mi lugar feliz. El año pasado encontré joyas que no conocía. ¿Ya tenés tu lista de libros?</div>
+          </div>
+          <div style="margin-bottom:12px;">
+            <span style="font-weight:bold;color:#8D7AFF;">@LecturaCafé</span> <span style="color:#888;">• Hace 25 min</span>
+            <div>Me encanta el ambiente y la energía. Ojalá este año haya más charlas con autores jóvenes.</div>
+          </div>
+          <div style="margin-bottom:12px;">
+            <span style="font-weight:bold;color:#8D7AFF;">@SofiPoesia</span> <span style="color:#888;">• Hace 40 min</span>
+            <div>¡Nos vemos ahí! El olor a libro nuevo es lo mejor. ¿Alguien sabe si va a estar Mariana Enríquez?</div>
+          </div>
+          <div>
+            <span style="font-weight:bold;color:#8D7AFF;">@MartínEscritor</span> <span style="color:#888;">• Hace 1 h</span>
+            <div>Ya estoy ahorrando para los descuentos. ¡Que empiece ya!</div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="meta"><strong>/Literatura</strong> • Hace 3 h • @MartínEscritor</div>
+      <h2>¿Bob Dylan sacando una muestra de dibujos? El tipo no se cansa de hacer arte. Me encanta cuando los artistas muestran otra faceta suya. Y encima con esa melancolía linda que tiene todo lo que hace.
+</h2>
+      <img src="Imagenes/Bob.png" alt="Novelas cortas" style="width:100%;max-width:500px;display:block;margin:16px 0;border-radius:12px;" />
+      <div class="acciones">
+        <button class="like-btn" data-liked="false" style="background:none;border:none;cursor:pointer;padding:0;vertical-align:middle;">
+          <svg class="heart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-5.434-7-10.5A5.5 5.5 0 0 1 12 5.5a5.5 5.5 0 0 1 7 5.0C19 15.566 12 21 12 21z"/>
+          </svg>
+        </button>
+        <span>890</span>
+        <button class="comment-btn" style="background:none;border:none;cursor:pointer;padding:0 0 0 8px;vertical-align:middle;">
+          <svg class="comment-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#457B9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </button>
+        <span>32</span> • <span>🔗 Compartir</span>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="meta"><strong>/Literatura</strong> • Hace 5 h • @SofiPoesia</div>
+      <h2>¿Qué poeta contemporáneo argentino recomendarían?</h2>
+      <div class="acciones">
+        <button class="like-btn" data-liked="false" style="background:none;border:none;cursor:pointer;padding:0;vertical-align:middle;">
+          <svg class="heart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-5.434-7-10.5A5.5 5.5 0 0 1 12 5.5a5.5 5.5 0 0 1 7 5.0C19 15.566 12 21 12 21z"/>
+          </svg>
+        </button>
+        <span>650</span>
+        <button class="comment-btn" style="background:none;border:none;cursor:pointer;padding:0 0 0 8px;vertical-align:middle;">
+          <svg class="comment-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#457B9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </button>
+        <span>21</span> • <span>🔗 Compartir</span>
+      </div>
+    </article>
+
+    <article class="post">
+      <div class="meta"><strong>/Literatura</strong> • Hace 8 h • @LeoHistorias</div>
+      <h2>¿Alguien leyó “El túnel” de Sabato? Opiniones y análisis</h2>
+      <div class="acciones">
+        <button class="like-btn" data-liked="false" style="background:none;border:none;cursor:pointer;padding:0;vertical-align:middle;">
+          <svg class="heart-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E63946" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 21s-7-5.434-7-10.5A5.5 5.5 0 0 1 12 5.5a5.5 5.5 0 0 1 7 5.0C19 15.566 12 21 12 21z"/>
+          </svg>
+        </button>
+        <span>1,4 mil</span>
+        <button class="comment-btn" style="background:none;border:none;cursor:pointer;padding:0 0 0 8px;vertical-align:middle;">
+          <svg class="comment-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#457B9D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </button>
+        <span>67</span> • <span>🔗 Compartir</span>
+      </div>
+    </article>
+    <!-- Más posts podrían ir aquí -->
+  </section>
+
+  <!-- Derecha: Últimas Noticias -->
+  <aside class="ultimas-noticias">
+    <h3>Últimas Noticias</h3>
+    <hr style="border:none;border-top:1.5px solid #e0e0e0;margin:0 0 16px 0;">
+    <ul>
+      <li>
+         Problemas y más problemas: El disco
+"maldito" de Def Leppard
+        <img src="Imagenes/noti1.png" alt="Def Leppard" style="display:block;margin:8px 0 16px 0;border-radius:8px;">
+      </li>
+      <li>
+        Nieve en Buenos Aires: 5 películas y
+series argentinas que transcurren
+durante una nevada
+        <img src="Imagenes/noti2.png" alt="Películas argentinas con nieve" style="display:block;margin:8px 0 16px 0;border-radius:8px;">
+      </li>
+      <li>
+        Julia Roberts revela qué películas no
+puede hacer ni mirar: "Descartado para
+mí
+        <img src="Imagenes/noti3.png" alt="Julia Roberts" style="display:block;margin:8px 0 16px 0;border-radius:8px;">
+      </li>
+      <li>
+        Mac DeMarco rema hacia un nuevo
+hogar con su próximo disco: Guitar
+        <img src="Imagenes/noti4.png" alt="Mac DeMarco" style="display:block;margin:8px 0 0 0;border-radius:8px;">
+      </li>
+    </ul>
+  </aside>
+</main>
+
+<!-- FOOTER -->
+<footer class="main-footer">
+  <div class="footer-grid">
+      <div class="footer-column sections">
+          <h4>SECCIONES</h4>
+          <ul>
+              <li><a href="#">Literatura</a></li>
+              <li><a href="#">Música</a></li>
+              <li><a href="#">Cine y Artes Visuales</a></li>
+              <li><a href="#">Teatro y Danza</a></li>
+              <li><a href="#">Museos y Artes Plásticas</a></li>
+              <li><a href="#">Costumbres y Tendencias</a></li>
+              <li><a href="#">Turismo Cultural</a></li>
+              <li><a href="#">Estadísticas culturales</a></li>
+          </ul>
+      </div>
+
+      <div class="footer-column contact-info">
+          <h4>HABLEMOS</h4>
+          <ul>
+              <li><a href="#">Contacto administrativo</a></li>
+              <li><a href="#">Contacto de lectores</a></li>
+              <li><a href="#">Contacto comercial</a></li>
+          </ul>
+          <div class="footer-social-icons">
+              <a href="#" class="social-icon-link"><img src="Imagenes/IG.png" alt="Instagram"></a>
+              <a href="#" class="social-icon-link"><img src="Imagenes/FB.png" alt="Facebook"></a>
+              <a href="#" class="social-icon-link"><img src="Imagenes/YT.png" alt="YouTube"></a>
+          </div>
+      </div>
+
+      <div class="footer-column editorial-info">
+          <h4>DIARIO DE CULTURA</h4>
+          <address>
+              <p>Tucumán 3808 – P.B.</p>
+              <p>Ciudad de Buenos Aires</p>
+          </address>
+          <p class="copyright">Copyright 2009-2024</p>
+      </div>
+  </div>
+</footer>
+
+<script>
+  // Cambia el corazón vacío a relleno y viceversa
+  document.querySelectorAll('.like-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      const liked = btn.getAttribute('data-liked') === 'true';
+      const svg = btn.querySelector('.heart-icon');
+      if (!liked) {
+        svg.setAttribute('fill', '#E63946');
+        btn.setAttribute('data-liked', 'true');
+      } else {
+        svg.setAttribute('fill', 'none');
+        btn.setAttribute('data-liked', 'false');
+      }
+    });
+  });
+
+  // Mostrar/ocultar comentarios del primer posteo
+  document.getElementById('show-comments-btn').addEventListener('click', function() {
+    var dropdown = document.getElementById('comments-dropdown');
+    dropdown.style.display = dropdown.style.display === 'none' ? 'block' : 'none';
+  });
+
+  // Agregar comentario literatura
+  document.getElementById('form-literatura').addEventListener('submit', function(e) {
+    e.preventDefault();
+    var input = document.getElementById('input-literatura');
+    var text = input.value.trim();
+    if (text) {
+      var list = document.getElementById('comments-list-literatura');
+      var div = document.createElement('div');
+      div.style.marginBottom = '12px';
+      div.innerHTML =
+        '<span style="font-weight:bold;color:#8D7AFF;">@Tú</span> <span style="color:#888;">• ahora</span>' +
+        '<div>' + text + '</div>';
+      list.insertBefore(div, list.firstChild);
+      input.value = '';
+    }
+  });
+</script>
+
+</body>
+</html>
